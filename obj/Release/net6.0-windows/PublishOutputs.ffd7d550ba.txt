@@ -1,0 +1,5 @@
+C:\Users\ezepi\source\repos\WinFormsApp2\WinFormsApp2\bin\Release\net6.0-windows\publish\WinFormsApp2.exe
+C:\Users\ezepi\source\repos\WinFormsApp2\WinFormsApp2\bin\Release\net6.0-windows\publish\WinFormsApp2.dll
+C:\Users\ezepi\source\repos\WinFormsApp2\WinFormsApp2\bin\Release\net6.0-windows\publish\WinFormsApp2.deps.json
+C:\Users\ezepi\source\repos\WinFormsApp2\WinFormsApp2\bin\Release\net6.0-windows\publish\WinFormsApp2.runtimeconfig.json
+C:\Users\ezepi\source\repos\WinFormsApp2\WinFormsApp2\bin\Release\net6.0-windows\publish\WinFormsApp2.pdb
