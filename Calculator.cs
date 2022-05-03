@@ -22,8 +22,8 @@ namespace WinFormsApp2
         string history = "";
         double first;
         double second;
-        
-        private void button1_Click(object sender, EventArgs e)
+
+        private void add_number_1(object sender, EventArgs e)
         {
             if (str[0] == '0' && str.Length == 1)
             {
@@ -33,7 +33,7 @@ namespace WinFormsApp2
             str += number;
             window.Text = str;
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void add_number_2(object sender, EventArgs e)
         {
             if (str[0] == '0' && str.Length == 1)
             {
@@ -43,7 +43,8 @@ namespace WinFormsApp2
             str += number;
             window.Text = str;
         }
-        private void button3_Click(object sender, EventArgs e)
+
+        private void add_number_3(object sender, EventArgs e)
         {
             if (str[0] == '0' && str.Length == 1)
             {
@@ -53,8 +54,7 @@ namespace WinFormsApp2
             str += number;
             window.Text = str;
         }
-
-        private void button4_Click(object sender, EventArgs e)
+        private void add_number_4(object sender, EventArgs e)
         {
             if (str[0] == '0' && str.Length == 1)
             {
@@ -63,10 +63,8 @@ namespace WinFormsApp2
             number = "4";
             str += number;
             window.Text = str;
-
         }
-
-        private void button5_Click(object sender, EventArgs e)
+        private void add_number_5(object sender, EventArgs e)
         {
             if (str[0] == '0' && str.Length == 1)
             {
@@ -76,8 +74,7 @@ namespace WinFormsApp2
             str += number;
             window.Text = str;
         }
-
-        private void button6_Click(object sender, EventArgs e)
+        private void add_number_6(object sender, EventArgs e)
         {
             if (str[0] == '0' && str.Length == 1)
             {
@@ -87,7 +84,7 @@ namespace WinFormsApp2
             str += number;
             window.Text = str;
         }
-        private void button7_Click(object sender, EventArgs e)
+        private void add_number_7(object sender, EventArgs e)
         {
             if (str[0] == '0' && str.Length == 1)
             {
@@ -97,8 +94,7 @@ namespace WinFormsApp2
             str += number;
             window.Text = str;
         }
-
-        private void button8_Click(object sender, EventArgs e)
+        private void add_number_8(object sender, EventArgs e)
         {
             if (str[0] == '0' && str.Length == 1)
             {
@@ -109,7 +105,7 @@ namespace WinFormsApp2
             window.Text = str;
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void add_number_9(object sender, EventArgs e)
         {
             if (str[0] == '0' && str.Length == 1)
             {
@@ -119,8 +115,7 @@ namespace WinFormsApp2
             str += number;
             window.Text = str;
         }
-
-        private void button10_Click(object sender, EventArgs e)
+        private void add_number_0(object sender, EventArgs e)
         {
             if (str[0] == '0' && str.Length == 1)
             {
@@ -163,7 +158,7 @@ namespace WinFormsApp2
             str += number;
             window.Text = str;
         }
-        private void button11_Click(object sender, EventArgs e)
+        private void divison_Click(object sender, EventArgs e)
         {
             if (str[str.Length - 1] == '/') return;
             number = "/";
@@ -171,16 +166,14 @@ namespace WinFormsApp2
             str += number;
             window.Text = str;
         }
-
-
-        private void button11_Click_2(object sender, EventArgs e)
+        private void delete_last_number(object sender, EventArgs e)
         {
             if (str.Length > 0)
             {
                 str = str.Remove(str.Length - 1);
                 window.Text = str;
             }
-            if (str.Length == 0)
+            else if (str.Length == 0)
             {
                 str = "0";
                 window.Text = str;
@@ -205,13 +198,12 @@ namespace WinFormsApp2
             str = "0";
             window.Text = str.ToString();
         }
-        private void fiend_Click(object sender, EventArgs e)
+        private void add_comma(object sender, EventArgs e)
         {
             number = ",";
             str += number;
             window.Text = str;
         }
-
         private void squere_Click(object sender, EventArgs e)
         {
             history += $"Square({str}) = ";
@@ -252,7 +244,7 @@ namespace WinFormsApp2
             history += str + '\n';
             window.Text = str;
         }
-        private void button12_Click(object sender, EventArgs e)
+        private void change_sign(object sender, EventArgs e)
         {
             history += $"{str}*-1 = ";
             var type = Convert.ToDouble(str);
@@ -261,6 +253,7 @@ namespace WinFormsApp2
             history += str + '\n';
             window.Text = str;
         }
+
         private void result(object sender, EventArgs e)
         {
             history += str;
@@ -324,5 +317,7 @@ namespace WinFormsApp2
             History.window.Text += history;  
             History.Show();
         }
+
+
     }
 }
