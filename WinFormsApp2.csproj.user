@@ -4,7 +4,10 @@
     <_LastSelectedProfileId>C:\Users\ezepi\source\repos\WinFormsApp2\WinFormsApp2\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="Form1.cs">
+    <Compile Update="Calculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="History.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

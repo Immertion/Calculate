@@ -2,7 +2,7 @@ namespace WinFormsApp2
 {
 
 
-    public partial class Form1 : Form
+    public partial class Calculator : Form
     {
         public static double Sqrt(double d)
         {
@@ -12,13 +12,14 @@ namespace WinFormsApp2
         {
             return d * d;
         }
-        public Form1()
+        public Calculator()
         {
             InitializeComponent();
         }
 
         string number;
         string str = "0";
+        string history = "";
         double first;
         double second;
         
@@ -131,6 +132,7 @@ namespace WinFormsApp2
         }
         private void plus_Click(object sender, EventArgs e)
         {
+            if (str[str.Length - 1] == '+') return;
             number = "+";
             first = Convert.ToDouble(str);
             str += number;
@@ -138,6 +140,16 @@ namespace WinFormsApp2
         }
         private void minus_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i] == '+' || str[i] == '*' || str[i] == '/')
+                {
+                    number = "-";
+                    str += number;
+                    window.Text = str;
+                    return;
+                }
+        }
             number = "-";
             first = Convert.ToDouble(str);
             str += number;
@@ -145,13 +157,15 @@ namespace WinFormsApp2
         }
         private void X_Click(object sender, EventArgs e)
         {
-            number = "x";
+            if (str[str.Length - 1] == '*') return;
+            number = "*";
             first = Convert.ToDouble(str);
             str += number;
             window.Text = str;
         }
         private void button11_Click(object sender, EventArgs e)
         {
+            if (str[str.Length - 1] == '/') return;
             number = "/";
             first = Convert.ToDouble(str);
             str += number;
@@ -175,6 +189,20 @@ namespace WinFormsApp2
         private void C_Click(object sender, EventArgs e)
         {
             str = "0";
+            window.Text = str;
+        }
+        private void CE_Click(object sender, EventArgs e)
+        {
+            for (int i = 1; i < str.Length; i++)
+            {
+                if (str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/')
+                {
+                    str = str.Remove(i + 1, str.Length - i - 1);
+                    window.Text = str.ToString();
+                    return;
+                }
+            }
+            str = "0";
             window.Text = str.ToString();
         }
         private void fiend_Click(object sender, EventArgs e)
@@ -186,37 +214,58 @@ namespace WinFormsApp2
 
         private void squere_Click(object sender, EventArgs e)
         {
+            history += $"Square({str}) = ";
             var type = Convert.ToDouble(str);
             type = Square(type);
             str = Convert.ToString(type);
+            history += str + '\n';
             window.Text = str;
         }
 
         private void sqrt_Click(object sender, EventArgs e)
         {
+            history += $"Sqrt({str}) = ";
             var type = Convert.ToDouble(str);
             type = Sqrt(type);
+            type = (Math.Round(type, 10));
             str = Convert.ToString(type);
+            history += str + '\n';
             window.Text = str;
         }
 
         private void one_on_number_Click(object sender, EventArgs e)
         {
+            history += $"1/{str} = ";
             var type = Convert.ToDouble(str);
             type = 1 / type;
+            type = (Math.Round(type, 10));
             str = Convert.ToString(type);
+            history += str + '\n';
+            window.Text = str;
+        }
+        private void proc_Click(object sender, EventArgs e)
+        {
+            history += $"({str})%= ";
+            var type = Convert.ToDouble(str);
+            type = type / 100;
+            str = Convert.ToString(type);
+            history += str + '\n';
             window.Text = str;
         }
         private void button12_Click(object sender, EventArgs e)
         {
+            history += $"{str}*-1 = ";
             var type = Convert.ToDouble(str);
             type *= -1;
             str = Convert.ToString(type);
+            history += str + '\n';
             window.Text = str;
         }
         private void result(object sender, EventArgs e)
         {
-            for (int i = 1; i <= str.Length; i++)
+            history += str;
+            history += " = ";
+            for (int i = 1; i < str.Length; i++)
             {
                 if (str[i] == '+')
                 {
@@ -225,6 +274,7 @@ namespace WinFormsApp2
                     first = first + second;
                     str = Convert.ToString(first);
                     window.Text = str;
+                    history += str;
                     break;
                 }
                 if (str[i] == '-')
@@ -234,15 +284,17 @@ namespace WinFormsApp2
                     first = first - second;
                     str = Convert.ToString(first);
                     window.Text = str;
+                    history += str;
                     break;
                 }
-                if (str[i] == 'x')
+                if (str[i] == '*')
                 {
                     str = str.Remove(0, i + 1);
                     second = Convert.ToDouble(str);
                     first = first * second;
                     str = Convert.ToString(first);
                     window.Text = str;
+                    history += str;
                     break;
                 }
                 if (str[i] == '/')
@@ -250,11 +302,15 @@ namespace WinFormsApp2
                     str = str.Remove(0, i + 1);
                     second = Convert.ToDouble(str);
                     first = first / second;
+                    first = (Math.Round(first, 10));
                     str = Convert.ToString(first);
                     window.Text = str;
+                    history += str;
                     break;
                 }
             }
+            history += '\n';
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -262,9 +318,11 @@ namespace WinFormsApp2
             window.Text = str.ToString();
         }
 
-        private void button11_Click_1(object sender, EventArgs e)
+        public void History_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            History History = new History();
+            History.window.Text += history;  
+            History.Show();
         }
     }
 }
