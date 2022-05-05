@@ -157,9 +157,13 @@ namespace WinFormsApp2
                 window.Text = string_calc;
                 return;
             }
-            if (string_calc[string_calc.Length - 1] != '-' || string_calc[string_calc.Length - 1] != '/' || string_calc[string_calc.Length - 1] != '*')
+            for (int i = 1; i < string_calc.Length; i++)
             {
-                result(sender, e);
+                if (string_calc[i] == '-' || string_calc[i] == '*' || string_calc[i] == '+' || string_calc[i] == '/')
+                {
+                    result(sender, e);
+
+                }
             }
             number = "+";
             first = Convert.ToDouble(string_calc);
@@ -176,9 +180,13 @@ namespace WinFormsApp2
                 window.Text = string_calc;
                 return;
             }
-            if (string_calc[string_calc.Length - 1] != '+' || string_calc[string_calc.Length - 1] != '/' || string_calc[string_calc.Length - 1] != '*')
+            for (int i = 1; i < string_calc.Length; i++)
             {
-                result(sender, e);
+                if (string_calc[i] == '-' || string_calc[i] == '*' || string_calc[i] == '+' || string_calc[i] == '/')
+                {
+                    result(sender, e);
+
+                }
             }
             number = "-";
             first = Convert.ToDouble(string_calc);
@@ -195,9 +203,13 @@ namespace WinFormsApp2
                 window.Text = string_calc;
                 return;
             }
-            if (string_calc[string_calc.Length - 1] != '-' || string_calc[string_calc.Length - 1] != '/' || string_calc[string_calc.Length - 1] != '+')
+            for (int i = 1; i < string_calc.Length; i++)
             {
-                result(sender, e);
+                if (string_calc[i] == '-' || string_calc[i] == '*' || string_calc[i] == '+' || string_calc[i] == '/')
+                {
+                    result(sender, e);
+
+                }
             }
             number = "*";
             first = Convert.ToDouble(string_calc);
@@ -214,10 +226,17 @@ namespace WinFormsApp2
                 window.Text = string_calc;
                 return;
             }
-            if (string_calc[string_calc.Length - 1] != '-' || string_calc[string_calc.Length - 1] != '+' || string_calc[string_calc.Length - 1] != '*')
+            
+            for (int i  = 1; i < string_calc.Length; i++)
             {
-                result(sender, e);
+                if (string_calc[i] == '-' || string_calc[i] == '*' || string_calc[i] == '+' || string_calc[i] == '/')
+                {
+                    result(sender, e);
+
+                }
             }
+            
+
             number = "/";
             first = Convert.ToDouble(string_calc);
             string_calc += number;
