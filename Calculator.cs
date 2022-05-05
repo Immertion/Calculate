@@ -186,12 +186,12 @@ namespace WinFormsApp2
         }
         private void delete_last_number(object sender, EventArgs e)
         {
-            if (string_calc.Length > 0)
+            if (string_calc.Length > 1)
             {
                 string_calc = string_calc.Remove(string_calc.Length - 1);
                 window.Text = string_calc;
             }
-            else if (string_calc.Length == 0)
+            else if (string_calc.Length == 1 || string_calc.Length == 0)
             {
                 string_calc = "0";
                 window.Text = string_calc;
@@ -218,6 +218,10 @@ namespace WinFormsApp2
         }
         private void add_comma(object sender, EventArgs e)
         {
+            if (string_calc[string_calc.Length - 1] == '-' || string_calc[string_calc.Length - 1] == '*' || string_calc[string_calc.Length - 1] == '+')
+            {
+                string_calc += "0";
+            }
             number = ",";
             string_calc += number;
             window.Text = string_calc;

@@ -53,7 +53,7 @@
             this.sqrt = new System.Windows.Forms.Button();
             this.one_on_number = new System.Windows.Forms.Button();
             this.CE = new System.Windows.Forms.Button();
-            this.proc = new System.Windows.Forms.Button();
+            this.percent = new System.Windows.Forms.Button();
             this.History = new System.Windows.Forms.Button();
             C = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -371,18 +371,18 @@
             this.CE.UseVisualStyleBackColor = false;
             this.CE.Click += new System.EventHandler(this.CE_Click);
             // 
-            // proc
+            // percent
             // 
-            this.proc.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.proc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.proc.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.proc.Location = new System.Drawing.Point(9, 191);
-            this.proc.Name = "proc";
-            this.proc.Size = new System.Drawing.Size(100, 68);
-            this.proc.TabIndex = 28;
-            this.proc.Text = "%";
-            this.proc.UseVisualStyleBackColor = false;
-            this.proc.Click += new System.EventHandler(this.proc_Click);
+            this.percent.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.percent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.percent.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.percent.Location = new System.Drawing.Point(9, 191);
+            this.percent.Name = "percent";
+            this.percent.Size = new System.Drawing.Size(100, 68);
+            this.percent.TabIndex = 28;
+            this.percent.Text = "%";
+            this.percent.UseVisualStyleBackColor = false;
+            this.percent.Click += new System.EventHandler(this.proc_Click);
             // 
             // History
             // 
@@ -403,7 +403,7 @@
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(437, 637);
             this.Controls.Add(this.History);
-            this.Controls.Add(this.proc);
+            this.Controls.Add(this.percent);
             this.Controls.Add(this.CE);
             this.Controls.Add(this.one_on_number);
             this.Controls.Add(this.sqrt);
@@ -462,7 +462,7 @@
         private Button sqrt;
         private Button one_on_number;
         private Button CE;
-        private Button proc;
+        private Button percent;
         private Button History;
     }
 }
