@@ -16,15 +16,37 @@ namespace WinFormsApp2
         {
             InitializeComponent();
         }
-
+               
         string number;
         string string_calc = "0";
         string history = "";
         double first;
         double second;
 
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.D0) number_0.PerformClick();
+            if (keyData == Keys.D1) number_1.PerformClick();
+            if (keyData == Keys.D2) number_2.PerformClick();
+            if (keyData == Keys.D3) number_3.PerformClick();
+            if (keyData == Keys.D4) number_4.PerformClick();
+            if (keyData == Keys.D5) number_5.PerformClick();
+            if (keyData == Keys.D6) number_6.PerformClick();
+            if (keyData == Keys.D7) number_7.PerformClick();
+            if (keyData == Keys.D8) number_8.PerformClick();
+            if (keyData == Keys.D9) number_9.PerformClick();
+            if (keyData == Keys.Oemplus) plus.PerformClick();
+            if (keyData == Keys.OemMinus) minus.PerformClick();
+            if (keyData == Keys.Back) DELETE.PerformClick();
+            if (keyData == Keys.OemPipe) division.PerformClick();
+            if (keyData == Keys.Multiply) X.PerformClick();
+            if (keyData == Keys.OemPeriod) comma.PerformClick();
+            if (keyData == Keys.Enter) equally.PerformClick();
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
         private void add_number_1(object sender, EventArgs e)
         {
+            
             if (string_calc[0] == '0' && string_calc.Length == 1)
             {
                 string_calc = "";
@@ -135,6 +157,10 @@ namespace WinFormsApp2
                 window.Text = string_calc;
                 return;
             }
+            if (string_calc[string_calc.Length - 1] != '-' || string_calc[string_calc.Length - 1] != '/' || string_calc[string_calc.Length - 1] != '*')
+            {
+                result(sender, e);
+            }
             number = "+";
             first = Convert.ToDouble(string_calc);
             string_calc += number;
@@ -150,6 +176,11 @@ namespace WinFormsApp2
                 window.Text = string_calc;
                 return;
             }
+            if (string_calc[string_calc.Length - 1] != '+' || string_calc[string_calc.Length - 1] != '/' || string_calc[string_calc.Length - 1] != '*')
+            {
+                result(sender, e);
+            }
+            number = "-";
             first = Convert.ToDouble(string_calc);
             string_calc += number;
             window.Text = string_calc;
@@ -163,6 +194,10 @@ namespace WinFormsApp2
                 string_calc += "*";
                 window.Text = string_calc;
                 return;
+            }
+            if (string_calc[string_calc.Length - 1] != '-' || string_calc[string_calc.Length - 1] != '/' || string_calc[string_calc.Length - 1] != '+')
+            {
+                result(sender, e);
             }
             number = "*";
             first = Convert.ToDouble(string_calc);
@@ -178,6 +213,10 @@ namespace WinFormsApp2
                 string_calc += "/";
                 window.Text = string_calc;
                 return;
+            }
+            if (string_calc[string_calc.Length - 1] != '-' || string_calc[string_calc.Length - 1] != '+' || string_calc[string_calc.Length - 1] != '*')
+            {
+                result(sender, e);
             }
             number = "/";
             first = Convert.ToDouble(string_calc);
@@ -330,6 +369,7 @@ namespace WinFormsApp2
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
             window.Text = string_calc.ToString();
         }
 

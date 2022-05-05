@@ -39,16 +39,16 @@
             this.number_7 = new System.Windows.Forms.Button();
             this.number_8 = new System.Windows.Forms.Button();
             this.number_9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.number_0 = new System.Windows.Forms.Button();
             this.equally = new System.Windows.Forms.Button();
             this.X = new System.Windows.Forms.Button();
             this.minus = new System.Windows.Forms.Button();
             this.plus = new System.Windows.Forms.Button();
             this.window = new System.Windows.Forms.Label();
             this.DELETE = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.fiend = new System.Windows.Forms.Button();
+            this.division = new System.Windows.Forms.Button();
+            this.sign = new System.Windows.Forms.Button();
+            this.comma = new System.Windows.Forms.Button();
             this.squere = new System.Windows.Forms.Button();
             this.sqrt = new System.Windows.Forms.Button();
             this.one_on_number = new System.Windows.Forms.Button();
@@ -189,18 +189,18 @@
             this.number_9.UseVisualStyleBackColor = false;
             this.number_9.Click += new System.EventHandler(this.add_number_9);
             // 
-            // button10
+            // number_0
             // 
-            this.button10.BackColor = System.Drawing.SystemColors.Control;
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button10.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button10.Location = new System.Drawing.Point(115, 561);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(100, 68);
-            this.button10.TabIndex = 9;
-            this.button10.Text = "0";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.add_number_0);
+            this.number_0.BackColor = System.Drawing.SystemColors.Control;
+            this.number_0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.number_0.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.number_0.Location = new System.Drawing.Point(115, 561);
+            this.number_0.Name = "number_0";
+            this.number_0.Size = new System.Drawing.Size(100, 68);
+            this.number_0.TabIndex = 9;
+            this.number_0.Text = "0";
+            this.number_0.UseVisualStyleBackColor = false;
+            this.number_0.Click += new System.EventHandler(this.add_number_0);
             // 
             // equally
             // 
@@ -281,44 +281,44 @@
             this.DELETE.UseVisualStyleBackColor = false;
             this.DELETE.Click += new System.EventHandler(this.delete_last_number);
             // 
-            // button11
+            // division
             // 
-            this.button11.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button11.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button11.Location = new System.Drawing.Point(328, 265);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(100, 68);
-            this.button11.TabIndex = 20;
-            this.button11.Text = "/";
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.divison_Click);
+            this.division.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.division.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.division.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.division.Location = new System.Drawing.Point(328, 265);
+            this.division.Name = "division";
+            this.division.Size = new System.Drawing.Size(100, 68);
+            this.division.TabIndex = 20;
+            this.division.Text = "/";
+            this.division.UseVisualStyleBackColor = false;
+            this.division.Click += new System.EventHandler(this.divison_Click);
             // 
-            // button12
+            // sign
             // 
-            this.button12.BackColor = System.Drawing.SystemColors.Control;
-            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button12.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button12.Location = new System.Drawing.Point(9, 561);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(100, 68);
-            this.button12.TabIndex = 21;
-            this.button12.Text = "+/-";
-            this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.change_sign);
+            this.sign.BackColor = System.Drawing.SystemColors.Control;
+            this.sign.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.sign.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.sign.Location = new System.Drawing.Point(9, 561);
+            this.sign.Name = "sign";
+            this.sign.Size = new System.Drawing.Size(100, 68);
+            this.sign.TabIndex = 21;
+            this.sign.Text = "+/-";
+            this.sign.UseVisualStyleBackColor = false;
+            this.sign.Click += new System.EventHandler(this.change_sign);
             // 
-            // fiend
+            // comma
             // 
-            this.fiend.BackColor = System.Drawing.SystemColors.Control;
-            this.fiend.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.fiend.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.fiend.Location = new System.Drawing.Point(221, 561);
-            this.fiend.Name = "fiend";
-            this.fiend.Size = new System.Drawing.Size(100, 68);
-            this.fiend.TabIndex = 22;
-            this.fiend.Text = ",";
-            this.fiend.UseVisualStyleBackColor = false;
-            this.fiend.Click += new System.EventHandler(this.add_comma);
+            this.comma.BackColor = System.Drawing.SystemColors.Control;
+            this.comma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.comma.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comma.Location = new System.Drawing.Point(221, 561);
+            this.comma.Name = "comma";
+            this.comma.Size = new System.Drawing.Size(100, 68);
+            this.comma.TabIndex = 22;
+            this.comma.Text = ",";
+            this.comma.UseVisualStyleBackColor = false;
+            this.comma.Click += new System.EventHandler(this.add_comma);
             // 
             // squere
             // 
@@ -391,7 +391,7 @@
             this.History.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.History.Location = new System.Drawing.Point(403, 0);
             this.History.Name = "History";
-            this.History.Size = new System.Drawing.Size(34, 29);
+            this.History.Size = new System.Drawing.Size(34, 37);
             this.History.TabIndex = 29;
             this.History.UseVisualStyleBackColor = false;
             this.History.Click += new System.EventHandler(this.History_Click);
@@ -408,9 +408,9 @@
             this.Controls.Add(this.one_on_number);
             this.Controls.Add(this.sqrt);
             this.Controls.Add(this.squere);
-            this.Controls.Add(this.fiend);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button11);
+            this.Controls.Add(this.comma);
+            this.Controls.Add(this.sign);
+            this.Controls.Add(this.division);
             this.Controls.Add(C);
             this.Controls.Add(this.DELETE);
             this.Controls.Add(this.window);
@@ -418,7 +418,7 @@
             this.Controls.Add(this.minus);
             this.Controls.Add(this.X);
             this.Controls.Add(this.equally);
-            this.Controls.Add(this.button10);
+            this.Controls.Add(this.number_0);
             this.Controls.Add(this.number_9);
             this.Controls.Add(this.number_8);
             this.Controls.Add(this.number_7);
@@ -438,6 +438,7 @@
 
         #endregion
 
+
         private Button number_1;
         private Button number_2;
         private Button number_3;
@@ -447,7 +448,7 @@
         private Button number_7;
         private Button number_8;
         private Button number_9;
-        private Button button10;
+        private Button number_0;
         private Button equally;
         private Button X;
         private Button minus;
@@ -455,9 +456,9 @@
         private Label window;
         private Button DELETE;
         private Button C;
-        private Button button11;
-        private Button button12;
-        private Button fiend;
+        private Button division;
+        private Button sign;
+        private Button comma;
         private Button squere;
         private Button sqrt;
         private Button one_on_number;
