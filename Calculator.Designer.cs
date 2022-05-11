@@ -44,7 +44,7 @@
             this.X = new System.Windows.Forms.Button();
             this.minus = new System.Windows.Forms.Button();
             this.plus = new System.Windows.Forms.Button();
-            this.window = new System.Windows.Forms.Label();
+            this.calculate = new System.Windows.Forms.Label();
             this.DELETE = new System.Windows.Forms.Button();
             this.division = new System.Windows.Forms.Button();
             this.sign = new System.Windows.Forms.Button();
@@ -55,6 +55,7 @@
             this.CE = new System.Windows.Forms.Button();
             this.percent = new System.Windows.Forms.Button();
             this.History = new System.Windows.Forms.Button();
+            this.last_calculate = new System.Windows.Forms.Label();
             C = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -254,19 +255,18 @@
             this.plus.UseVisualStyleBackColor = false;
             this.plus.Click += new System.EventHandler(this.plus_Click);
             // 
-            // window
+            // calculate
             // 
-            this.window.BackColor = System.Drawing.Color.PowderBlue;
-            this.window.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.window.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.window.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.window.Location = new System.Drawing.Point(9, 78);
-            this.window.Name = "window";
-            this.window.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.window.Size = new System.Drawing.Size(419, 48);
-            this.window.TabIndex = 16;
-            this.window.Text = "0";
-            this.window.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.calculate.BackColor = System.Drawing.Color.PowderBlue;
+            this.calculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.calculate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.calculate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.calculate.Location = new System.Drawing.Point(6, 40);
+            this.calculate.Name = "calculate";
+            this.calculate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.calculate.Size = new System.Drawing.Size(419, 48);
+            this.calculate.TabIndex = 16;
+            this.calculate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // DELETE
             // 
@@ -396,12 +396,27 @@
             this.History.UseVisualStyleBackColor = false;
             this.History.Click += new System.EventHandler(this.History_Click);
             // 
+            // last_calculate
+            // 
+            this.last_calculate.BackColor = System.Drawing.Color.PowderBlue;
+            this.last_calculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.last_calculate.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.last_calculate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.last_calculate.Location = new System.Drawing.Point(9, 79);
+            this.last_calculate.Name = "last_calculate";
+            this.last_calculate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.last_calculate.Size = new System.Drawing.Size(419, 48);
+            this.last_calculate.TabIndex = 30;
+            this.last_calculate.Text = "0";
+            this.last_calculate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(437, 637);
+            this.Controls.Add(this.last_calculate);
             this.Controls.Add(this.History);
             this.Controls.Add(this.percent);
             this.Controls.Add(this.CE);
@@ -413,7 +428,7 @@
             this.Controls.Add(this.division);
             this.Controls.Add(C);
             this.Controls.Add(this.DELETE);
-            this.Controls.Add(this.window);
+            this.Controls.Add(this.calculate);
             this.Controls.Add(this.plus);
             this.Controls.Add(this.minus);
             this.Controls.Add(this.X);
@@ -453,7 +468,7 @@
         private Button X;
         private Button minus;
         private Button plus;
-        private Label window;
+        private Label calculate;
         private Button DELETE;
         private Button C;
         private Button division;
@@ -465,5 +480,6 @@
         private Button CE;
         private Button percent;
         private Button History;
+        private Label last_calculate;
     }
 }
