@@ -38,7 +38,6 @@ namespace WinFormsApp2
             if (keyData == Keys.D7) number_7.PerformClick();
             if (keyData == Keys.D8) number_8.PerformClick();
             if (keyData == Keys.D9) number_9.PerformClick();
-            
             if (keyData == Keys.Oemplus) plus.PerformClick();
             if (keyData == Keys.OemMinus) minus.PerformClick();
             if (keyData == Keys.Back) DELETE.PerformClick();
