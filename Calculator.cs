@@ -21,8 +21,10 @@ namespace WinFormsApp2
         string string_calc = "";
         string output = ""; 
         string history = "";
+        string memory_number = "0";
         double first;
         double second;
+        
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
@@ -308,8 +310,7 @@ namespace WinFormsApp2
                     return;
                 }
             }
-            string_calc = "";
-            string_calc += output;
+            string_calc = output;
             history += output + '\n';
             last_calculate.Text = output;
         }
@@ -331,8 +332,7 @@ namespace WinFormsApp2
                     return;
                 }
             }
-            string_calc = "";
-            string_calc += output;
+            string_calc = output;
             history += output + '\n';
             last_calculate.Text = output;
 
@@ -355,8 +355,7 @@ namespace WinFormsApp2
                     return;
                 }
             }
-            string_calc = "";
-            string_calc += output;
+            string_calc = output;
             history += output + '\n';
             last_calculate.Text = output;
         }
@@ -377,8 +376,7 @@ namespace WinFormsApp2
                     return;
                 }
             }
-            string_calc = "";
-            string_calc += output;
+            string_calc = output;
             history += output + '\n';
             last_calculate.Text = output;
         }
@@ -399,12 +397,51 @@ namespace WinFormsApp2
                     return;
                 }
             }
-            string_calc = "";
-            string_calc += output;
+            string_calc = output;
             history += output + '\n';
             last_calculate.Text = output;
         }
+        private void MC_Click(object sender, EventArgs e)
+        {
+            memory_number = "0";
+        }
+        private void MR_Click(object sender, EventArgs e)
+        {
+            output = memory_number;
+            for (int i = 1; i < string_calc.Length; i++)
+            {
+                if (string_calc[i] == '-' || string_calc[i] == '*' || string_calc[i] == '+' || string_calc[i] == '/')
+                {
+                    string_calc = string_calc.Remove(i + 1, string_calc.Length - i - 1);
+                    string_calc += memory_number;
+                    last_calculate.Text = output;
+                    return;
+                }
+            }
+            string_calc = output;
+            last_calculate.Text = output;
+        }
 
+        private void Mplus_Click(object sender, EventArgs e)
+        {
+            var type = Convert.ToDouble(output);
+            var type_memory = Convert.ToDouble(memory_number);
+            type = type_memory + type;
+            memory_number = Convert.ToString(type);
+        }
+
+        private void Mminus_Click(object sender, EventArgs e)
+        {
+            var type = Convert.ToDouble(output);
+            var type_memory = Convert.ToDouble(memory_number);
+            type = type_memory - type;
+            memory_number = Convert.ToString(type);
+        }
+
+        private void MS_Click(object sender, EventArgs e)
+        {
+            memory_number = output;
+        }
         private void result(object sender, EventArgs e)
         {
             history += string_calc;
